@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DB541CEB-5F04-436D-AED0-068EE5027295}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RentACar</RootNamespace>
+    <AssemblyName>RentACar</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>rentacar.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.28.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.28\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.28\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.28\lib\net452\ZstdNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\DataAcces\DataFactory.cs" />
+    <Compile Include="Data\DataAcces\Exceptions\DataAccessException.cs" />
+    <Compile Include="Data\DataAcces\IAdministrator.cs" />
+    <Compile Include="Data\DataAcces\IAutomobil.cs" />
+    <Compile Include="Data\DataAcces\IIznajmljivac.cs" />
+    <Compile Include="Data\DataAcces\IIznajmljivanje.cs" />
+    <Compile Include="Data\DataAcces\IOsoba.cs" />
+    <Compile Include="Data\DataAcces\IZaposleni.cs" />
+    <Compile Include="Data\DataAcces\MySql\MySqlAdministrator.cs" />
+    <Compile Include="Data\DataAcces\MySql\MySqlAutomobil.cs" />
+    <Compile Include="Data\DataAcces\MySql\MySqlDataFactory.cs" />
+    <Compile Include="Data\DataAcces\MySql\MySqlIznajmljivac.cs" />
+    <Compile Include="Data\DataAcces\MySql\MySqlIznajmljivanje.cs" />
+    <Compile Include="Data\DataAcces\MySql\MySqlOsoba.cs" />
+    <Compile Include="Data\DataAcces\MySql\MySqlUtil.cs" />
+    <Compile Include="Data\DataAcces\MySql\MySqlZaposleni.cs" />
+    <Compile Include="Data\Model\Administrator.cs" />
+    <Compile Include="Data\Model\Automobil.cs" />
+    <Compile Include="Data\Model\Iznajmljivac.cs" />
+    <Compile Include="Data\Model\Iznajmljivanje.cs" />
+    <Compile Include="Data\Model\Osoba.cs" />
+    <Compile Include="Data\Model\Zaposleni.cs" />
+    <Compile Include="Forms\AdminsInitialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminsInitialForm.Designer.cs">
+      <DependentUpon>AdminsInitialForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AzuriranjeAutomobilaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AzuriranjeAutomobilaForm.Designer.cs">
+      <DependentUpon>AzuriranjeAutomobilaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AzuriranjePodatakaAdminaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AzuriranjePodatakaAdminaForm.Designer.cs">
+      <DependentUpon>AzuriranjePodatakaAdminaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AzuriranjePodatakaZaposlenogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AzuriranjePodatakaZaposlenogForm.Designer.cs">
+      <DependentUpon>AzuriranjePodatakaZaposlenogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BrisanjeAutomobilaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BrisanjeAutomobilaForm.Designer.cs">
+      <DependentUpon>BrisanjeAutomobilaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DetaljiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DetaljiForm.Designer.cs">
+      <DependentUpon>DetaljiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DodavanjeNovogAutomobilaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DodavanjeNovogAutomobilaForm.Designer.cs">
+      <DependentUpon>DodavanjeNovogAutomobilaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DodavanjeZaposlenogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DodavanjeZaposlenogForm.Designer.cs">
+      <DependentUpon>DodavanjeZaposlenogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ObavjestenjeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ObavjestenjeForm.Designer.cs">
+      <DependentUpon>ObavjestenjeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PredgledSvihIznajmljivanjaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PredgledSvihIznajmljivanjaForm.Designer.cs">
+      <DependentUpon>PredgledSvihIznajmljivanjaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrijavaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrijavaForm.Designer.cs">
+      <DependentUpon>PrijavaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrikazAutomobilaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrikazAutomobilaForm.Designer.cs">
+      <DependentUpon>PrikazAutomobilaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrikazAutomobilaZaAdminaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrikazAutomobilaZaAdminaForm.Designer.cs">
+      <DependentUpon>PrikazAutomobilaZaAdminaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrikazIznajmljivaca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrikazIznajmljivaca.Designer.cs">
+      <DependentUpon>PrikazIznajmljivaca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrikazZaposlenihForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrikazZaposlenihForm.Designer.cs">
+      <DependentUpon>PrikazZaposlenihForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RazduzivanjeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RazduzivanjeForm.Designer.cs">
+      <DependentUpon>RazduzivanjeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ZaduzivanjeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ZaduzivanjeForm.Designer.cs">
+      <DependentUpon>ZaduzivanjeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ZaposleniInitialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ZaposleniInitialForm.Designer.cs">
+      <DependentUpon>ZaposleniInitialForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\Common.cs" />
+    <EmbeddedResource Include="Forms\AdminsInitialForm.en.resx">
+      <DependentUpon>AdminsInitialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminsInitialForm.resx">
+      <DependentUpon>AdminsInitialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminsInitialForm.sr-Latn-BA.resx">
+      <DependentUpon>AdminsInitialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AzuriranjeAutomobilaForm.en.resx">
+      <DependentUpon>AzuriranjeAutomobilaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AzuriranjeAutomobilaForm.resx">
+      <DependentUpon>AzuriranjeAutomobilaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AzuriranjePodatakaAdminaForm.aa-DJ.resx">
+      <DependentUpon>AzuriranjePodatakaAdminaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AzuriranjePodatakaAdminaForm.aa.resx">
+      <DependentUpon>AzuriranjePodatakaAdminaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AzuriranjePodatakaAdminaForm.en.resx">
+      <DependentUpon>AzuriranjePodatakaAdminaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AzuriranjePodatakaAdminaForm.ksh-DE.resx">
+      <DependentUpon>AzuriranjePodatakaAdminaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AzuriranjePodatakaAdminaForm.resx">
+      <DependentUpon>AzuriranjePodatakaAdminaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AzuriranjePodatakaAdminaForm.sr-Latn-BA.resx">
+      <DependentUpon>AzuriranjePodatakaAdminaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AzuriranjePodatakaZaposlenogForm.en.resx">
+      <DependentUpon>AzuriranjePodatakaZaposlenogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AzuriranjePodatakaZaposlenogForm.resx">
+      <DependentUpon>AzuriranjePodatakaZaposlenogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AzuriranjePodatakaZaposlenogForm.sr-Latn-BA.resx">
+      <DependentUpon>AzuriranjePodatakaZaposlenogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BrisanjeAutomobilaForm.aa-DJ.resx">
+      <DependentUpon>BrisanjeAutomobilaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BrisanjeAutomobilaForm.aa.resx">
+      <DependentUpon>BrisanjeAutomobilaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BrisanjeAutomobilaForm.en.resx">
+      <DependentUpon>BrisanjeAutomobilaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BrisanjeAutomobilaForm.resx">
+      <DependentUpon>BrisanjeAutomobilaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BrisanjeAutomobilaForm.sr-Latn-BA.resx">
+      <DependentUpon>BrisanjeAutomobilaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DetaljiForm.en.resx">
+      <DependentUpon>DetaljiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DetaljiForm.resx">
+      <DependentUpon>DetaljiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DetaljiForm.sr-Latn-BA.resx">
+      <DependentUpon>DetaljiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DodavanjeNovogAutomobilaForm.en.resx">
+      <DependentUpon>DodavanjeNovogAutomobilaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DodavanjeNovogAutomobilaForm.resx">
+      <DependentUpon>DodavanjeNovogAutomobilaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DodavanjeNovogAutomobilaForm.sr-Latn-BA.resx">
+      <DependentUpon>DodavanjeNovogAutomobilaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DodavanjeZaposlenogForm.aa.resx">
+      <DependentUpon>DodavanjeZaposlenogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DodavanjeZaposlenogForm.en.resx">
+      <DependentUpon>DodavanjeZaposlenogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DodavanjeZaposlenogForm.resx">
+      <DependentUpon>DodavanjeZaposlenogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DodavanjeZaposlenogForm.sr-Latn-BA.resx">
+      <DependentUpon>DodavanjeZaposlenogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ObavjestenjeForm.en.resx">
+      <DependentUpon>ObavjestenjeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ObavjestenjeForm.resx">
+      <DependentUpon>ObavjestenjeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PredgledSvihIznajmljivanjaForm.en.resx">
+      <DependentUpon>PredgledSvihIznajmljivanjaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PredgledSvihIznajmljivanjaForm.resx">
+      <DependentUpon>PredgledSvihIznajmljivanjaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PredgledSvihIznajmljivanjaForm.sr-Latn-BA.resx">
+      <DependentUpon>PredgledSvihIznajmljivanjaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrijavaForm.en.resx">
+      <DependentUpon>PrijavaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrijavaForm.resx">
+      <DependentUpon>PrijavaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrijavaForm.sr-Latn-BA.resx">
+      <DependentUpon>PrijavaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrijavaForm.sr-Latn.resx">
+      <DependentUpon>PrijavaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrikazAutomobilaForm.aa.resx">
+      <DependentUpon>PrikazAutomobilaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrikazAutomobilaForm.en.resx">
+      <DependentUpon>PrikazAutomobilaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrikazAutomobilaForm.resx">
+      <DependentUpon>PrikazAutomobilaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrikazAutomobilaForm.sr-Latn-BA.resx">
+      <DependentUpon>PrikazAutomobilaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrikazAutomobilaZaAdminaForm.en.resx">
+      <DependentUpon>PrikazAutomobilaZaAdminaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrikazAutomobilaZaAdminaForm.resx">
+      <DependentUpon>PrikazAutomobilaZaAdminaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrikazAutomobilaZaAdminaForm.sr-Latn-BA.resx">
+      <DependentUpon>PrikazAutomobilaZaAdminaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrikazAutomobilaZaAdminaForm.sr-Latn-XK.resx">
+      <DependentUpon>PrikazAutomobilaZaAdminaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrikazIznajmljivaca.en-AS.resx">
+      <DependentUpon>PrikazIznajmljivaca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrikazIznajmljivaca.en.resx">
+      <DependentUpon>PrikazIznajmljivaca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrikazIznajmljivaca.resx">
+      <DependentUpon>PrikazIznajmljivaca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrikazIznajmljivaca.sr-Latn-BA.resx">
+      <DependentUpon>PrikazIznajmljivaca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrikazZaposlenihForm.aa.resx">
+      <DependentUpon>PrikazZaposlenihForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrikazZaposlenihForm.en.resx">
+      <DependentUpon>PrikazZaposlenihForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrikazZaposlenihForm.resx">
+      <DependentUpon>PrikazZaposlenihForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrikazZaposlenihForm.sr-Latn-BA.resx">
+      <DependentUpon>PrikazZaposlenihForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RazduzivanjeForm.aa-DJ.resx">
+      <DependentUpon>RazduzivanjeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RazduzivanjeForm.aa.resx">
+      <DependentUpon>RazduzivanjeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RazduzivanjeForm.en.resx">
+      <DependentUpon>RazduzivanjeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RazduzivanjeForm.resx">
+      <DependentUpon>RazduzivanjeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RazduzivanjeForm.sr-Latn-BA.resx">
+      <DependentUpon>RazduzivanjeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ZaduzivanjeForm.en.resx">
+      <DependentUpon>ZaduzivanjeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ZaduzivanjeForm.resx">
+      <DependentUpon>ZaduzivanjeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ZaduzivanjeForm.sr-Latn-BA.resx">
+      <DependentUpon>ZaduzivanjeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ZaposleniInitialForm.en.resx">
+      <DependentUpon>ZaposleniInitialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ZaposleniInitialForm.resx">
+      <DependentUpon>ZaposleniInitialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ZaposleniInitialForm.sr-Latn-BA.resx">
+      <DependentUpon>ZaposleniInitialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ZaposleniInitialForm.sr-Latn-XK.resx">
+      <DependentUpon>ZaposleniInitialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="rentacar.ico" />
+    <None Include="Resources\car.jpg" />
+    <None Include="Resources\132204_calendar_icon.png" />
+    <None Include="Resources\132225_document_icon.png" />
+    <None Include="Resources\132206_date_icon.png" />
+    <None Include="Resources\132306_properties_icon.png" />
+    <None Include="Resources\132335_add_icon.png" />
+    <None Include="Resources\132192_delete_icon.png" />
+    <None Include="Resources\132232_edit_icon.png" />
+    <None Include="Resources\132334_info_icon.png" />
+    <None Include="Resources\new-24x24.png" />
+    <None Include="Resources\delete-24x24.png" />
+    <None Include="Resources\about-24x24.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

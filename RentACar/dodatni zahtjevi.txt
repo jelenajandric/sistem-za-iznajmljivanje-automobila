@@ -1,0 +1,5 @@
+Implementirani su svi dodatni yahtjevi.
+Postoje dva tipa naloga: administrator i zaposleni koji imaju različite funkcije.
+Podržana je internacionalizacija, jezici su engleski i srpski (latinica, BiH).
+Podržan je izbor tema. Postoje četiri teme, a korisnikov izbor se pamti u bazi.
+Korisničko uputstvo je priloženo u dokumentu.
